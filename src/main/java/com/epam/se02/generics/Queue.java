@@ -1,6 +1,5 @@
 package com.epam.se02.generics;
 
-
 // put(1)
 // put(2)
 // put(3)
@@ -9,17 +8,23 @@ package com.epam.se02.generics;
 // poll() - 2
 // poll() - 3
 
+import java.util.NoSuchElementException;
+
 // First
 // In
 // First
 // Out
-public interface Queue {
+public interface Queue<E> {
 
-    void put(Object value);
+    void put(E value);
 
-    Object poll();
+    E poll();
 
-    Object peek();
+    /**
+     * @return Element from head (without delete)
+     * @throws NoSuchElementException When empty
+     */
+    E peek() throws NoSuchElementException;
 
     boolean isEmpty();
 }
