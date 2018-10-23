@@ -14,11 +14,11 @@ import java.util.NoSuchElementException;
 // In
 // First
 // Out
-public interface Queue<E> {
+public interface Queue<E> extends Iterable<E> {
 
     void put(E value);
 
-    E poll();
+    E poll() throws NoSuchElementException;
 
     /**
      * @return Element from head (without delete)

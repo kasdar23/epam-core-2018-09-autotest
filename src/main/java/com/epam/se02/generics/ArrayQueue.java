@@ -1,6 +1,7 @@
 package com.epam.se02.generics;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class ArrayQueue<E> implements Queue<E> {
@@ -33,7 +34,7 @@ public class ArrayQueue<E> implements Queue<E> {
 
     @Override
     @SuppressWarnings("unchecked")
-    public E poll() {
+    public E poll() throws NoSuchElementException {
         checkNotEmpty();
         Object result = data[indexPoll++];
         if (indexPoll == data.length / 2) {
@@ -62,5 +63,10 @@ public class ArrayQueue<E> implements Queue<E> {
     @Override
     public boolean isEmpty() {
         return indexPoll == indexPut;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        throw new UnsupportedOperationException();
     }
 }
