@@ -1,5 +1,7 @@
 package com.epam.se02.generics;
 
+import lombok.EqualsAndHashCode;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -59,6 +61,7 @@ class ObjectByHashCodeComparator implements Comparator<Object> {
     }
 }
 
+@EqualsAndHashCode
 class PhysicalObject {
 
     private int weight;
@@ -83,6 +86,7 @@ class PhysicalObject {
     }
 }
 
+@EqualsAndHashCode(callSuper = true)
 class Person extends PhysicalObject {
 
     private int age;
@@ -120,6 +124,7 @@ class Person extends PhysicalObject {
     }
 }
 
+@EqualsAndHashCode(callSuper = true)
 class Student extends Person {
 
     private int course;
